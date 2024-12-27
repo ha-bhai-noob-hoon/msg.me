@@ -59,7 +59,7 @@ export async function GET(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error checking username:', error);
+    console.error('Error checking username from mongoose:', error);
     return Response.json(
       {
         success: false,
