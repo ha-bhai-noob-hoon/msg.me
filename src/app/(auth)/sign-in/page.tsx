@@ -34,7 +34,7 @@ export default function SignInForm() {
     console.log("awaiting sign-in");
     
     const result = await signIn('credentials', {
-      redirect: true,
+      redirect: false,
       identifier: data.identifier,
       password: data.password,
     });
