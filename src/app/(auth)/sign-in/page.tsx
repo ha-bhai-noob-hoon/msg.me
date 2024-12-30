@@ -41,7 +41,8 @@ export default function SignInForm() {
 
 
     if (result?.url) {
-      router.replace('/dashboard');
+      console.log("Redirecting to:", result.url);
+      window.location.href = '/dashboard'; // Replace with manual navigation
     }
 
     if (result?.error) {
