@@ -34,10 +34,15 @@ export default function SignInForm() {
     console.log("awaiting sign-in");
     
     const result = await signIn('credentials', {
-      redirect: false,
+      redirect: true,
       identifier: data.identifier,
       password: data.password,
     });
+
+
+    if (result?.url) {
+      router.replace('/dashboard');
+    }
 
     if (result?.error) {
       if (result.error === 'CredentialsSignin') {
@@ -56,9 +61,7 @@ export default function SignInForm() {
       }
     }
 
-    if (result?.url) {
-      router.replace('/dashboard');
-    }
+    
   };
 
   return (
