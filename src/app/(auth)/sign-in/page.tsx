@@ -31,6 +31,8 @@ export default function SignInForm() {
 
   const { toast } = useToast();
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
+    console.log("awaiting sign-in");
+    
     const result = await signIn('credentials', {
       redirect: false,
       identifier: data.identifier,
@@ -45,6 +47,7 @@ export default function SignInForm() {
           variant: 'destructive',
         });
       } else {
+        console.log("unexpected error: ", result.error);
         toast({
           title: 'Error',
           description: result.error,
