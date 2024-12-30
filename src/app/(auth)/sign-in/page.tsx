@@ -39,7 +39,7 @@ export default function SignInForm() {
       password: data.password,
     });
 
-
+    console.log("the result of the sign in is: ", result);
     if (result?.url) {
       console.log("Redirecting to:", result.url);
       window.location.href = '/dashboard'; // Replace with manual navigation
