@@ -65,6 +65,7 @@ export const authOptions: NextAuthOptions = {
         session.user.isAcceptingMessage = token.isAcceptingMessage;
         session.user.username = token.username;
       }
+      console.log("returning this session: ", session);
       return session;
     },
   },

@@ -5,6 +5,9 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
+
+
+  console.log("")
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
