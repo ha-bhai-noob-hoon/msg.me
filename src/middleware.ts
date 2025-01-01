@@ -19,10 +19,12 @@ export async function middleware(request: NextRequest) {
       url.pathname.startsWith('/verify') ||
       url.pathname === '/')
   ) {
+    console.log("user already succesfuly authenticated...redirecting to dashbaord");
     return NextResponse.redirect(new URL('/dashboard', request.url));
   }
 
   if (!token && url.pathname.startsWith('/dashboard')) {
+    console.log("token is not present.....not succesfully authenticated...redirecting to sign-in page");
     return NextResponse.redirect(new URL('/sign-in', request.url));
   }
 
