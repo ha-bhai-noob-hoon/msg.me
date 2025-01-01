@@ -9,6 +9,7 @@ export const config = {
 
 const secret = process.env.NEXTAUTH_SECRET
 export async function middleware(request: NextRequest) {
+  console.log("the req to middleare is: ", request.headers)
   const token = await getToken({ req: request, secret });
   console.log("JWT response: ", token);
   const url = request.nextUrl;
